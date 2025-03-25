@@ -232,8 +232,8 @@ document.addEventListener("DOMContentLoaded", function() {
         // If reached max users, show alert with user list
         if (users.length === MAX_USERS) {
             let userList = users.map(user => 
-                `<li>Username: ${user.username}, Email: ${user.email}</li>`
-            ).join("");
+                `Username: ${user.username}, Email: ${user.email}`
+            ).join(" , ");
             
             setTimeout(() => {
                 alert(`Maximum users reached (${MAX_USERS})! Registered users:\n${userList}`);
