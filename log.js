@@ -204,12 +204,20 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     
         // Check user limit
-        if (users.length >= MAX_USERS) {
-            let userList = users.map(user => 
-                `<li>Username: ${user.username}, Email: ${user.email}</li>`
-            ).join("");
+        // if (users.length >= MAX_USERS) {
+        //     let userList = users.map(user => 
+        //         `<li>Username: ${user.username}, Email: ${user.email}</li>`
+        //     ).join("");
             
-            alert(`User limit reached (${MAX_USERS})! Registered users:\n${userList}`);
+        //     alert(`User limit reached (${MAX_USERS})! Registered users:\n${userList}`);
+        //     return;
+        // }
+        if (users.length >= MAX_USERS) {
+            let userList = users.map((user, index) => 
+                `${index + 1}. Username: ${user.username}, Email: ${user.email}`
+            ).join("\n");
+            
+            alert(`User limit reached (maximum ${MAX_USERS} users allowed)!\n\nRegistered users:\n${userList}`);
             return;
         }
     
